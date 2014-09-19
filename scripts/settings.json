@@ -1,0 +1,17 @@
+ {  "industry": [
+    { "name": "Technology"},
+    { "name": "Retail & Wholesale Trade"},
+    { "name": "Mining & Construction"},
+    { "name": "Media & Entertainment"},
+    { "name": "Travel & Transport"},
+    { "name": "Manufacturing"},
+    { "name": "Government"},
+    { "name": "Energy, Chemicals & Utilities"},
+    { "name": "Health & Social Care"},
+    { "name": "Financial Services"},
+    { "name": "Non-profit"},
+    { "name": "Education"},
+    { "name": "Farming, Forestry, Fishing"},
+    { "name": "Holding Company"}
+
+ ], "measures": [  { "name": "Collaboration" } ,  { "name": "Mobility" } ,  { "name": "Cost savings" } ,  { "name": "Culture" } ,  { "name": "Competition" } ,  { "name": "Focus" } ,  { "name": "Integration" } ,  { "name": "Speed" } ,  { "name": "Content management" }  ],  "business_functions": [  { "name": "HR",  "business_processes": [  { "name": "Recruitment: picking the ‘right’ employees",  "optional_metrics": [  { "name": "Cost per hire (£)" }  ] } ,  { "name": "Recruitment2: picking the ‘right’ employees",  "optional_metrics": [  ] } ,  { "name": "Recruitment3: picking the ‘right’ employees",  "optional_metrics": [  ] } ,  { "name": "Recruitment4: picking the ‘right’ employees",  "optional_metrics": [  ] }  ] } ,  { "name": "HR2",  "business_processes": [  { "name": "Recruitment: picking the ‘right’ employees",  "optional_metrics": [  ] }  ] } ,  { "name": "Test1234",  "business_processes": [  { "name": "test",  "optional_metrics": [  ] }  ] }  ] } 

@@ -1,0 +1,212 @@
+*{
+    box-sizing:border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+body{
+    color: #000;
+    background: #fff;
+    font-family: 'Trebuchet MS', Trebuchet;
+}
+button{
+    font-family: 'Trebuchet MS', Trebuchet;
+}
+.hidden{
+    display: none;
+}
+
+/*flipper*/
+.flipper {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    overflow: auto;
+} 
+.page {
+    color: #333;
+}
+
+/*----------PAGES---------------*/
+.page .page-container
+{
+    position: relative;
+    height: 100%;
+    overflow: auto;
+}
+.page .page-container .content
+{
+    position: absolute;
+    display: block;
+    width: 80%;
+    margin: auto;
+    left: 10%;
+}
+
+.page .page-container .options {
+    text-align: center;
+    padding-top: 25px;
+}
+
+/*page overlay*/
+.overlay .foreground .foreground-container
+{
+    background-color: #618FE8;
+    box-shadow: 5px 5px 10px #ddd;
+}
+.overlay .foreground .overlay-content
+{
+    color: #fff;
+    font-size:2em;
+}
+.overlay .foreground .overlay-content .content,
+.overlay .foreground .overlay-content .image
+{
+    display:inline-block;
+    vertical-align: middle;
+}
+.overlay .foreground .overlay-content .content
+{
+    margin-left:1em;
+}
+
+.overlay .foreground .overlay-content .content .actions button,
+.snap_button
+{
+    background-color: #4F74BD;
+    border: solid 2px #fff;
+    border-radius: 2em;
+    Color: #fff;
+    font-size: 1.3em;
+    padding: .1em .5em;
+    margin-right: .5em;
+    outline:none;
+    cursor: pointer;
+}
+.overlay .foreground .overlay-content .content .actions button:active,
+.snap_button:active
+{
+    -webkit-transition-duration: 0.2s;
+    background-color: #fff;
+    color: #4F74BD;
+}
+@-webkit-keyframes moveFromBottom {
+	0% { -webkit-transform: translateY(100%);opacity:0;}
+	50% { -webkit-transform: translateY(-5%);}
+	100% { -webkit-transform: translateY(0);opacity:1;}
+}
+@keyframes moveFromBottom {
+	0% { -webkit-transform: translateY(100%);opacity:0;}
+	50% { -webkit-transform: translateY(-5%);}
+	100% { -webkit-transform: translateY(0);opacity:1;}
+}
+
+@-webkit-keyframes moveFromRight {
+	0% { -webkit-transform: translateX(0);opacity:1;}
+	50% { -webkit-transform: translateX(5%);}
+	100% { -webkit-transform: translateX(-100%);opacity:0;}
+}
+@keyframes moveFromRight {
+	0% { -webkit-transform: translateX(0);opacity:1;}
+	50% { -webkit-transform: translateX(5%);}
+	100% { -webkit-transform: translateX(-100%);opacity:0;}
+}
+
+#measures .options div {
+    width: 90%;
+    margin: auto;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+}
+
+#select_options {
+    margin: auto;
+    position: relative;
+}
+#select_options:after {
+    clear: both;
+}
+
+.droppable, .select {
+    width: 49%;
+    float: left;
+    border: 1px solid #ddd;
+    min-height: 200px;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.droppable li, .select li {
+    padding: 0px;
+    list-style-type: none;
+    text-indent: 0px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.droppable li {
+    background: papayawhip;
+}
+
+.droppable li:hover, .select li:hover {
+    cursor: pointer;
+}
+
+div, li, input, button {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#measures .options select {
+    margin-left: 50px;
+}
+
+h1 {
+    display: block;
+    width: 80% !important;
+    margin: auto !important;
+}
+
+.page-header {
+    color: white;
+    margin-top: 0px !important;
+    margin-bottom: 20px !important;
+    padding: 10px;
+    padding-top: 40px;
+
+}
+.red {
+    background: #e51c23;
+}
+.purple {
+    background: #9c27b0;
+}
+.indigo {
+    background: #3f51b5;
+}
+.teal {
+    background: #009688;
+}
+.lime {
+    background: #cddc39;
+}
+.yellow {
+    background: #ffeb3b;
+}
+.brown {
+    background: #795548;
+}
+.instruction_guy {
+    width: 90px;
+    margin: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Measuring Value Application</title>
+        <link rel="stylesheet" type="text/css" href="/styles/main.css">
+        <link rel="stylesheet" type="text/css" href="/styles/startup.css">
+        <link rel="stylesheet" type="text/css" href="/styles/flipper.css">
+
+        <script src="/scripts/lib/jquery-2.1.1.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+        <script src="/scripts/lib/jquery.velocity.min.js"></script>
+        <script src="/scripts/settings.js"></script>
+
+        <!-- libraries -->
+        <script src="/scripts/lib/flipper.js"></script>
+        <script src="/scripts/lib/sandbox.js"></script>
+        <script src="/scripts/lib/stripe.js"></script>
+
+        <!-- utilities for managing google drive actions -->
+        <script src="/scripts/utils/spreadsheet.js"></script>
+        <script src="/scripts/utils/serve_json.js"></script>
+
+        <!-- object Result -->
+        <script src="/scripts/objects/results.js"></script>
+
+        <!-- main controllers -->
+        <script src="/scripts/data.js"></script>
+        <script src="/scripts/main.js"></script>
+        <script src="/scripts/startup.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+        <div id="flipper" class="flipper">
+            <div class="page" id="company">
+                <div class="page-container">
+                    <header class="page-header red"><h1>Company</h1></header>
+
+                    <div class="content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Instructions</h3>
+                            </div>
+                            <div class="panel-body">
+                                <img src="/images/android_blackgray.jpg" class="instruction_guy" align="left"/>
+                                Please enter the company name.
+                                <br/>
+                                <strong>
+                                    Please note, once you choose to move onto the next page, there's no option to go back and edit your entries.
+                                </strong>
+
+                            </div>
+                        </div>
+                        <div class='options'>
+                            <div class="input-group">
+                                <span class="input-group-addon">@</span>
+                                <input class="form-control" type="text" name="company" placeholder="The company name"/>
+                            </div>
+                            <input class="btn btn-info" type="submit" value="Enter" name="company-name"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page-bf">
+                <div class="page-container">
+                    <header class="page-header purple"><h1>Business Function</h1></header>
+                    <div class="content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Instructions</h3>
+                            </div>
+                            <div class="panel-body">
+                                <img src="/images/android_blackgray.jpg" class="instruction_guy" align="right"/>
+                                Please select the functional area that applies to this business transformation
+                                <br/>
+                                <strong>
+                                    Please note, once you choose to move onto the next page, there's no option to go back and edit your entries.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="options">
+                            <div>
+                                <select id="bp-select" class="form-control">
+                                </select>
+                            </div>
+                            <button class="btn btn-info" type="submit">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page-bp">
+                <div class="page-container">
+                    <header class="page-header indigo"><h1>Key Business Processes</h1></header>
+                    <div class="content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    How much value has been added to the business function-specific processes?
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <img src="/images/android_blackgray.jpg" class="instruction_guy" align="left"/>
+                                Select the processes that have been impacted by the business transformation. Once you've selected all the relevant processes, please re-order them, by dragging and dropping them, so that they are in an order where the first one is the most highly impacted business process and the last one is the least impacted business process.
+                                <br/>
+                                <strong>
+                                    Please note, once you choose to move onto the next page, there's no option to go back and edit your entries.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="options">
+                            <button class="btn btn-info" type="submit">Select</button>
+                            <div id="select_options">
+                                <ul class="select">
+
+                                </ul>
+                                <ul class="droppable">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="measures">
+                <div class="page-container">
+                    <header class="page-header teal"><h1>Value Measures</h1></header>
+                    <div class="content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Upon 'Going Google', what is the magnitude of change on each of the key value measures?</h3>
+                            </div>
+                            <div class="panel-body">
+                                <img src="/images/android_blackgray.jpg" class="instruction_guy" align="right"/>
+                                For this business process, spread 10 points across the value measures by entering a value between 1-10, allocating more points to the value measure that has been more greatly impacted. Not all value measures need to be allocated points.
+                                <br/>
+                                <strong>
+                                    Please note, once you choose to move onto the next page, there's no option to go back and edit your entries.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="points">
+                            Points left: <span class="points_left">10</span>
+                        </div>
+                        <div class="options">
+                            <button  disabled="disabled" class="btn btn-info" type="submit">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" id="optional_metrics">
+                <div class="page-container">
+                    <header class='page-header lime'><h1>Optional Metrics</h1></header>
+                    <div class="content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    How has 'Going Google' impacted the business function-specific performance measures?
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <img src="/images/android_blackgray.jpg" class="instruction_guy" align="left"/>
+                                Please enter the value for the performance measures directly before 'Going Google' and the most recent value.
+                                <br/>
+                                <strong>
+                                    Please note, once you choose to move onto the next page, there's no option to go back and edit your entries.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="options">
+                            <button class="btn btn-info" type="submit">Save</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="optional_stories">
+                <div class="page-container">
+                    <header class="page-header red"><h1>Customer Story Entry (optional)</h1></header>
+                    <div class="content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    xxx
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <img src="/images/android_blackgray.jpg" class="instruction_guy" align="right"/>
+                                To help document the business transformation, please enter a bulleted list of the <strong>old process</strong> before Going Google, the <strong>new process</strong> after Going Google and the impact experienced.
+                            </div>
+                        </div>
+                        <div class="options">
+                            <button class="btn btn-info" type="submit">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" id="measures2">
+                <div class="page-container">
+                    <header class="page-header yellow"><h1>Next</h1></header>
+                    <div class="content">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                Click 'Next' to move onto the next business process.
+                            </div>
+                        </div>
+                        <div class="options">
+                            <button class="btn btn-info" type="submit">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="confirmation">
+                <div class="page-container">
+                    <header class="page-header brown"><h1>Thank you!</h1></header>
+                    <div class="content">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="/images/_waving.jpg" class="instruction_guy" align="left"/>
+                                We appreciate your time!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay">
+            <div class="background"></div>
+            <div class="foreground">
+                <div class="foreground-container"></div>
+            </div>
+        </div>
+        <div class="hidden">
+            <div id="overlays">
+                <div id="overlay-error" class="overlay-content">
+                    <div class="content">
+                        <p class="error"></p>
+                        <div class="actions">
+                            <button class="continue">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <iframe id="sandbox-scripts" class="hidden" src="/scripts/sandbox-scripts.html"></iframe>
+    </body>
+</html>

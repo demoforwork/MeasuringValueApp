@@ -1,0 +1,15 @@
+.emptyopt, .emptybp, .emptybf, .emptymm, .emptyind {
+    display: none;
+}
+.om, .bf, .bp, .measures, .om span, .bf h3, .bp span, .measures span, .industry, .industry span {
+    padding: 5px;
+    margin: 0px;
+    margin-left: 20px;
+}
+.om, .bf, .bp, .measures, .industry {
+    border-left: 1px solid #f5f5f5
+}
+
+h2, h3, h4, h5 {
+    cursor: crosshair;
+}
