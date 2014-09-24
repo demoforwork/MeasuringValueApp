@@ -246,6 +246,7 @@ main.initialize = function() {
     });
 
     $("#optional_stories").on(flipper.Event.BEFORE_OPEN, function () {
+        $("#optional_stories .options").empty();
         var div = $("<div/>").addClass("optional_stories");
         var title = $("<h4/>").text("Industry");
         var select = $("<select/>").attr("name", "industry");
@@ -286,7 +287,7 @@ main.initialize = function() {
         div.append(contact_role);
 
         var contact_data = $("<div/>").addClass("contact_data");
-        contact_data.append($("<h4/>").text("Customer contact data"));
+        contact_data.append($("<h4/>").text("Customer contact email / phone"));
         contact_data.append($("<input/>").attr("name", "contact_data").addClass("form-control"));
         div.append(contact_data);
 
