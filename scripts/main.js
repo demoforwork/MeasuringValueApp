@@ -246,7 +246,7 @@ main.initialize = function() {
     });
 
     $("#optional_stories").on(flipper.Event.BEFORE_OPEN, function () {
-        $("#optional_stories .options").empty();
+        $("#optional_stories .options div").remove();
         var div = $("<div/>").addClass("optional_stories");
         var title = $("<h4/>").text("Industry");
         var select = $("<select/>").attr("name", "industry");
